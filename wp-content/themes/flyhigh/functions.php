@@ -141,6 +141,7 @@ add_action( 'widgets_init', 'flyhigh_widgets_init' );
  */
 function flyhigh_scripts() {
 	wp_enqueue_style( 'flyhigh-style', get_stylesheet_uri(), array(), _S_VERSION );
+	wp_enqueue_style( 'flyhigh-header-style','./wp-content/themes/flyhigh/assets/css/header.css', array());
 	wp_style_add_data( 'flyhigh-style', 'rtl', 'replace' );
 
 	wp_enqueue_script( 'flyhigh-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
