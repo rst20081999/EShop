@@ -1,10 +1,10 @@
 <?php
 /**
- * Eshop functions and definitions
+ * Flyhigh functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package Eshop
+ * @package Flyhigh
  */
 
 if ( ! defined( '_S_VERSION' ) ) {
@@ -12,7 +12,7 @@ if ( ! defined( '_S_VERSION' ) ) {
 	define( '_S_VERSION', '1.0.0' );
 }
 
-if ( ! function_exists( 'eshop_setup' ) ) :
+if ( ! function_exists( 'flyhigh_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
@@ -20,14 +20,14 @@ if ( ! function_exists( 'eshop_setup' ) ) :
 	 * runs before the init hook. The init hook is too late for some features, such
 	 * as indicating support for post thumbnails.
 	 */
-	function eshop_setup() {
+	function flyhigh_setup() {
 		/*
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
-		 * If you're building a theme based on Eshop, use a find and replace
-		 * to change 'eshop' to the name of your theme in all the template files.
+		 * If you're building a theme based on Flyhigh, use a find and replace
+		 * to change 'flyhigh' to the name of your theme in all the template files.
 		 */
-		load_theme_textdomain( 'eshop', get_template_directory() . '/languages' );
+		load_theme_textdomain( 'flyhigh', get_template_directory() . '/languages' );
 
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
@@ -50,7 +50,7 @@ if ( ! function_exists( 'eshop_setup' ) ) :
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus(
 			array(
-				'menu-1' => esc_html__( 'Primary', 'eshop' ),
+				'menu-1' => esc_html__( 'Primary', 'flyhigh' ),
 			)
 		);
 
@@ -75,7 +75,7 @@ if ( ! function_exists( 'eshop_setup' ) ) :
 		add_theme_support(
 			'custom-background',
 			apply_filters(
-				'eshop_custom_background_args',
+				'flyhigh_custom_background_args',
 				array(
 					'default-color' => 'ffffff',
 					'default-image' => '',
@@ -102,7 +102,7 @@ if ( ! function_exists( 'eshop_setup' ) ) :
 		);
 	}
 endif;
-add_action( 'after_setup_theme', 'eshop_setup' );
+add_action( 'after_setup_theme', 'flyhigh_setup' );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -111,22 +111,22 @@ add_action( 'after_setup_theme', 'eshop_setup' );
  *
  * @global int $content_width
  */
-function eshop_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'eshop_content_width', 640 );
+function flyhigh_content_width() {
+	$GLOBALS['content_width'] = apply_filters( 'flyhigh_content_width', 640 );
 }
-add_action( 'after_setup_theme', 'eshop_content_width', 0 );
+add_action( 'after_setup_theme', 'flyhigh_content_width', 0 );
 
 /**
  * Register widget area.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-function eshop_widgets_init() {
+function flyhigh_widgets_init() {
 	register_sidebar(
 		array(
-			'name'          => esc_html__( 'Sidebar', 'eshop' ),
+			'name'          => esc_html__( 'Sidebar', 'flyhigh' ),
 			'id'            => 'sidebar-1',
-			'description'   => esc_html__( 'Add widgets here.', 'eshop' ),
+			'description'   => esc_html__( 'Add widgets here.', 'flyhigh' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
 			'before_title'  => '<h2 class="widget-title">',
@@ -134,22 +134,22 @@ function eshop_widgets_init() {
 		)
 	);
 }
-add_action( 'widgets_init', 'eshop_widgets_init' );
+add_action( 'widgets_init', 'flyhigh_widgets_init' );
 
 /**
  * Enqueue scripts and styles.
  */
-function eshop_scripts() {
-	wp_enqueue_style( 'eshop-style', get_stylesheet_uri(), array(), _S_VERSION );
-	wp_style_add_data( 'eshop-style', 'rtl', 'replace' );
+function flyhigh_scripts() {
+	wp_enqueue_style( 'flyhigh-style', get_stylesheet_uri(), array(), _S_VERSION );
+	wp_style_add_data( 'flyhigh-style', 'rtl', 'replace' );
 
-	wp_enqueue_script( 'eshop-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'flyhigh-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'eshop_scripts' );
+add_action( 'wp_enqueue_scripts', 'flyhigh_scripts' );
 
 /**
  * Implement the Custom Header feature.

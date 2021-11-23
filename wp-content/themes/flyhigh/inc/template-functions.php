@@ -2,7 +2,7 @@
 /**
  * Functions which enhance the theme by hooking into WordPress
  *
- * @package Eshop
+ * @package Flyhigh
  */
 
 /**
@@ -11,7 +11,7 @@
  * @param array $classes Classes for the body element.
  * @return array
  */
-function eshop_body_classes( $classes ) {
+function flyhigh_body_classes( $classes ) {
 	// Adds a class of hfeed to non-singular pages.
 	if ( ! is_singular() ) {
 		$classes[] = 'hfeed';
@@ -24,14 +24,14 @@ function eshop_body_classes( $classes ) {
 
 	return $classes;
 }
-add_filter( 'body_class', 'eshop_body_classes' );
+add_filter( 'body_class', 'flyhigh_body_classes' );
 
 /**
  * Add a pingback url auto-discovery header for single posts, pages, or attachments.
  */
-function eshop_pingback_header() {
+function flyhigh_pingback_header() {
 	if ( is_singular() && pings_open() ) {
 		printf( '<link rel="pingback" href="%s">', esc_url( get_bloginfo( 'pingback_url' ) ) );
 	}
 }
-add_action( 'wp_head', 'eshop_pingback_header' );
+add_action( 'wp_head', 'flyhigh_pingback_header' );
