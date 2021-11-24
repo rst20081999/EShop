@@ -1,3 +1,24 @@
-#primary-menu>ul>li{
-	color: red !important;
+header{
+	display: flex;
+	flex-direction: row;
+	background-color: #ddd;
+	width: 100%;
+	padding: 0 10% 0 10%;
+	height: 105px;
+	justify-content: space-evenly;
+	#logo{
+		width: 40%;
+	}
+	.menu-head-menu-container{
+		ul{
+		list-style-type:none ;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-evenly;
+		width: 80%;
+		}
+	}
 }
+
+	// background-color: green;
+

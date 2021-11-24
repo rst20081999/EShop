@@ -24,39 +24,14 @@
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'flyhigh' ); ?></a>
 	<header id="masthead" class="site-header">
-		<div>
-			<p>dfd</p>
+			<div id="logo"><img alt="logo" src="<?php _e(get_stylesheet_directory_uri().'/assets/images/home/logo.png',"flyhigh") ?>"/>
+			</div>
 			<?php
 			wp_nav_menu(
 				array(
-					'theme_location' => 'menu-1',
+					'theme_location' => 'Head-Menu',
 					'menu_id'        => 'primary-menu',
 				)
 			);
 			?>
-		</div>
-		<div class="site-branding">
-			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php
-			else :
-				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif;
-			$flyhigh_description = get_bloginfo( 'description', 'display' );
-			if ( $flyhigh_description || is_customize_preview() ) :
-				?>
-				<p>I am testing it</p>
-				<p class="site-description"><?php echo $flyhigh_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
-			<?php endif; ?>
-		</div>
-
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'flyhigh' ); ?></button>
-		</nav>
 	</header>
-	<!-- #masthead -->

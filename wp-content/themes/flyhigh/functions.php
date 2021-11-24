@@ -51,6 +51,7 @@ if ( ! function_exists( 'flyhigh_setup' ) ) :
 		register_nav_menus(
 			array(
 				'menu-1' => esc_html__( 'Primary', 'flyhigh' ),
+				'Head-Menu'=>esc_html__('Menu','flyhigh')
 			)
 		);
 
