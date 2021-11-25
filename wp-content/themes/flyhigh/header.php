@@ -24,8 +24,10 @@
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'flyhigh' ); ?></a>
 	<header id="masthead" class="site-header">
-			<div id="logo"><img alt="logo" src="<?php _e(get_stylesheet_directory_uri().'/assets/images/home/logo.png',"flyhigh") ?>"/>
+		<div id="navbar">
+			<div id="logo-img"><img alt="logo" src="<?php _e(get_stylesheet_directory_uri().'/assets/images/home/logo.png',"flyhigh") ?>"/>
 			</div>
+			<div id="divforsearch">
 			<?php
 			wp_nav_menu(
 				array(
@@ -34,4 +36,7 @@
 				)
 			);
 			?>
+			<div id="searchbar"><input type="text" placeholder="Search here"><span class="dashicons dashicons-search"></span></div>
+			</div>
+		</div>
 	</header>

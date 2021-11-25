@@ -14,43 +14,49 @@
 
 get_header();
 ?>
+<div class="slidercontainer">  
+        <div class="showSlide fade">  
+            <img src="<?php _e(get_stylesheet_directory_uri().'/assets/images/home/slider-image.png',"flyhigh") ?>" />  
+            <div class="content">Gearing up the ideas <br/></div>
+            <div class="content2">Loremsom ipsum lorem sum ipsum kuchj nnjdf<br/></div>  
+        </div>  
+        <div class="showSlide fade">  
+            <img src="<?php _e(get_stylesheet_directory_uri().'/assets/images/home/slider-image.png',"flyhigh") ?>"/>  
+            <div class="content">Lorem ipsum sit ametdolor </div>  
+        </div>  
+  
+        <div class="showSlide fade">  
+            <img src="<?php _e(get_stylesheet_directory_uri().'/assets/images/home/slider-image.png',"flyhigh") ?>"/>  
+            <div class="content">Lorem ipsum dolor sit amet</div>  
+        </div>  
+        <div class="showSlide fade">  
+            <img src="<?php _e(get_stylesheet_directory_uri().'/assets/images/home/slider-image.png',"flyhigh") ?>"/>  
+            <div class="content">Lorem ipsum dolor sit amet</div>  
+        </div>  
+        <!-- Navigation arrows -->  
+        <a class="left" onclick="nextSlide(-1)"><span class="dashicons dashicons-arrow-left-alt"></span></a>  
+        <a class="right" onclick="nextSlide(1)"><span class="dashicons dashicons-arrow-right-alt"></span></a>  
+    </div>
+    <div id="belowslider">
+      <div id="content">
+        <div id="data">
+        <img src="<?php _e(get_stylesheet_directory_uri().'/assets/images/home/leaf.png',"flyhigh") ?>"/>
+        <span><p id="data-heading">Advertising</p>
+        <p id="para">Some content below too lorem isum scdf orem isum scdf</p></span>
+        </div>
+        <div id="data">
+          <img src="<?php _e(get_stylesheet_directory_uri().'/assets/images/home/mobile.png',"flyhigh") ?>"/>
+          <span><p id="data-heading">Multimedia</p>
+        <p id="para">Some content below too orem isum scdf orem isum scdf orem isum scdf</p></span>
+        </div>
+        <div id="data">
+        <img src="<?php _e(get_stylesheet_directory_uri().'/assets/images/home/camera.png',"flyhigh") ?>"/>
+          <span><p id="data-heading">Photography</p>
+        <p id="para">Some content below too orem isum scdf orem isum scdf orem isum scdf</p></span>
+        </div>
+      </div>
+    </div>
 
-	<main id="primary" class="site-main">
-
-		<?php
-		if ( have_posts() ) :
-
-			if ( is_home() && ! is_front_page() ) :
-				?>
-				<header>
-					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-				</header>
-				<?php
-			endif;
-
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
-
-				/*
-				 * Include the Post-Type-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_type() );
-
-			endwhile;
-
-			the_posts_navigation();
-
-		else :
-
-			get_template_part( 'template-parts/content', 'none' );
-
-		endif;
-		?>
-
-	</main><!-- #main -->
 
 <?php
 get_sidebar();

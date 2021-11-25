@@ -1,22 +1,83 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&display=swap");
 header {
-  display: flex;
-  flex-direction: row;
   background-color: #ddd;
   width: 100%;
-  padding: 0 10% 0 10%;
   height: 105px;
-  justify-content: space-evenly;
+  left: 0;
+  position: fixed;
+  z-index: 2;
 }
 
-header #logo {
-  width: 40%;
+header #navbar {
+  width: 80%;
+  height: 105px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
-header .menu-head-menu-container ul {
+header #navbar #logo-img {
+  left: 0;
+  display: block;
+  position: relative;
+  margin-right: 20px;
+}
+
+header #navbar #divforsearch {
+  display: flex;
+  flex-direction: row;
+}
+
+header #navbar #searchbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+header #navbar #searchbar input {
+  height: 20px;
+  width: 150px;
+  margin-left: 10px;
+  border-radius: 3px;
+  border: 1px solid #62585f;
+  background-color: #fff;
+}
+
+header #navbar #searchbar span {
+  margin-left: 5px;
+  padding: 1px;
+  border-radius: 10px;
+  background-color: #62585f;
+  color: #fff;
+  width: 20px;
+}
+
+header #navbar .menu-head-menu-container {
+  right: 0;
+}
+
+header #navbar .menu-head-menu-container ul {
   list-style-type: none;
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
-  width: 80%;
+  justify-content: space-between;
+  left: 0;
+}
+
+header #navbar .menu-head-menu-container ul a {
+  font-family: 'Open Sans';
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  color: #222;
+  padding: 10px;
+  border-radius: 3px;
+}
+
+header #navbar .menu-head-menu-container ul a:hover {
+  color: #fff;
+  background-color: #ef4634;
 }
 /*# sourceMappingURL=header.css.map */
