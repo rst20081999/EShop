@@ -11,23 +11,30 @@
 
 ?>
 
-	<footer id="colophon" class="site-footer">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'flyhigh' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'flyhigh' ), 'WordPress' );
-				?>
-			</a>
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'flyhigh' ), 'flyhigh', '<a href="http://underscores.me/">Underscores.me</a>' );
-				?>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
+	<footer>
+		<div id="inner">
+		<div id="description">
+			<p id="head">Welcome to D'SIGNfly</p>
+			<p id="desc">Loren sum ipsum Loren sum ipsum Loren sum ipsum Loren sum ipsum Loren sum ipsum Loren sum ipsum Loren sum ipsum Loren sum ipsum Loren sum ipsum Loren sum ipsum</p>
+			<a href="#">Read More</p></a>
+		</div>
+		<div id="contactus">
+			<p id="head">Contact Us</p>
+			<p id="desc">Street something some thiongs dfji sfid  fjdk fdif <br/> Email: <span>conatc@gmail.com</span></p>
+		<div id="links">
+			<img class="fb" src="<?php _e(get_stylesheet_directory_uri().'/assets/images/home/fb.png',"flyhigh") ?>"></img>
+			<img class="google" src="<?php _e(get_stylesheet_directory_uri().'/assets/images/home/google.png',"flyhigh") ?>"></img>
+			<img class="linkedin" src="<?php _e(get_stylesheet_directory_uri().'/assets/images/home/twitter.png',"flyhigh") ?>"></img>
+			<img class="pinterest" src="<?php _e(get_stylesheet_directory_uri().'/assets/images/home/pinterest.png',"flyhigh") ?>"></img>
+			<img class="twitter" src="<?php _e(get_stylesheet_directory_uri().'/assets/images/home/linkedin.png',"flyhigh") ?>"></img>
+		</div>
+		</div>
+		</div>
+			<div id="copyright">
+				2012 - D'SIGNfly | Designed by <span>rtCamp</span> 
+			</div>
+	</footer>
 </div><!-- #page -->
-
 <?php wp_footer(); ?>
 
 </body>

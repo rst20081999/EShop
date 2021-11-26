@@ -1,0 +1,76 @@
+footer {
+  width: 80%;
+  margin: 0 auto;
+}
+
+footer #inner {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid #62585f;
+}
+
+footer #inner #head {
+  font-size: 25px;
+  font-family: "Open Sans";
+  font-weight: 400;
+  color: #625854;
+  text-shadow: 2px 2px #fff;
+}
+
+footer #inner #desc {
+  font-family: "Open Sans";
+  font-weight: 400;
+  font-size: 14px;
+  color: #62585f;
+  line-height: 21px;
+}
+
+footer #inner a,
+footer #inner span {
+  text-decoration: none;
+  color: #ef4634;
+  font-family: "Open Sans";
+  font-weight: 400;
+}
+
+footer #inner a:hover,
+footer #inner span:hover {
+  text-decoration: underline;
+}
+
+footer #inner #description {
+  flex: 0 0 50%;
+  margin: 10px;
+}
+
+footer #inner #contactus {
+  flex: 0 0 50%;
+  margin: 10px;
+}
+
+footer #inner #links {
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+footer #copyright {
+  text-align: center;
+  margin: 0 auto;
+  align-items: center;
+  font-family: 'Open Sans';
+  font-size: 14px;
+  color: #62585f;
+  padding: 10px;
+}
+
+footer #copyright span {
+  color: #ef4634;
+}
+
+footer #copyright span:hover {
+  text-decoration: underline;
+}
+/*# sourceMappingURL=footer.css.map */

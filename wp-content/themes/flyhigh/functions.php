@@ -144,6 +144,7 @@ function flyhigh_scripts() {
 	wp_enqueue_style( 'flyhigh-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_enqueue_style( 'flyhigh-header-style','./wp-content/themes/flyhigh/assets/css/header.css', array());
 	wp_enqueue_style( 'flyhigh-slider-style','./wp-content/themes/flyhigh/assets/css/main.css', array());
+	wp_enqueue_style( 'flyhigh-footer-style','./wp-content/themes/flyhigh/assets/css/footer.css', array());
 	wp_style_add_data( 'flyhigh-style', 'rtl', 'replace' );
 
 	// wp_enqueue_style( 'flyhigh-slider-style','https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css', array());

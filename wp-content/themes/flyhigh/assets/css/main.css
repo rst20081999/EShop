@@ -14,7 +14,8 @@
   margin: auto;
 }
 
-.left, .right {
+.left,
+.right {
   cursor: pointer;
   position: absolute;
   top: 50%;
@@ -33,7 +34,8 @@
   border-radius: 3px 0 0 3px;
 }
 
-.left:hover, .right:hover {
+.left:hover,
+.right:hover {
   background-color: rgba(115, 115, 115, 0.8);
 }
 
@@ -41,7 +43,7 @@
   color: #eff5d4;
   font-size: 30px;
   padding: 8px 12px;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-weight: 500;
   font-size: 70px;
   color: #fff;
@@ -56,7 +58,7 @@
   color: #eff5d4;
   font-size: 30px;
   padding: 8px 12px;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-weight: 400;
   font-size: 16px;
   color: #fff;
@@ -82,7 +84,7 @@
 
 @keyframes fade {
   from {
-    opacity: .4;
+    opacity: 0.4;
   }
   to {
     opacity: 1;
@@ -116,7 +118,7 @@
 
 #belowslider #content #data #data-heading {
   font-size: 20px;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   color: #ef4634;
   font-weight: 500;
   margin: 0;
@@ -124,9 +126,74 @@
 
 #belowslider #content #data #para {
   margin: 0;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-weight: 400;
   font-size: 13px;
   color: #333;
+}
+
+#belowslider #content #data:last-child {
+  margin-right: 20px;
+}
+
+#belowgallery {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  align-items: center;
+}
+
+#belowgallery #content #title-bar {
+  display: flex;
+  margin-top: 105px;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  border-bottom: 1px solid #68585f;
+  align-items: center;
+}
+
+#belowgallery #content #title-bar p {
+  font-family: "Open Sans";
+  font-weight: 300;
+  font-size: 45px;
+  color: #62585f;
+}
+
+#belowgallery #content #title-bar button {
+  font-family: 'Open Sans';
+  font-weight: 400;
+  font-size: 16px;
+  color: #fff;
+  background-color: #222;
+  padding: 10px;
+  border-radius: 3px;
+}
+
+#belowgallery #content #main-gallery {
+  border-bottom: 1px solid #222;
+  width: 100%;
+  align-items: center;
+}
+
+#belowgallery #content #main-gallery #image-box {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+#belowgallery #content #main-gallery #image-box #images {
+  flex: 1 0 33.33%;
+  border-radius: 10px;
+}
+
+#belowgallery #content #main-gallery #image-box #images img {
+  width: 300px;
+  height: 210px;
+  margin: 10px;
+  border-radius: 10px;
 }
 /*# sourceMappingURL=main.css.map */

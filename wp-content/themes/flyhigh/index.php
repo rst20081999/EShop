@@ -56,8 +56,38 @@ get_header();
         </div>
       </div>
     </div>
+    <div id="belowgallery">
+      <div id="content">
+        <div id="title-bar">
+          <p>D'SIGN IS THE SOUL</p>
+          <button>View all</button>
+        </div>
+        <div id="main-gallery">
+          <div id="image-box">
+            <div id="images">
+          <img src="<?php _e(get_stylesheet_directory_uri().'/assets/images/home/image-1.png',"flyhigh") ?>" />  
+          </div>
+          <div id="images">
+          <img src="<?php _e(get_stylesheet_directory_uri().'/assets/images/home/image-1.png',"flyhigh") ?>" />  
+          </div>
+          <div id="images">
+          <img src="<?php _e(get_stylesheet_directory_uri().'/assets/images/home/image-1.png',"flyhigh") ?>" />  
+          </div>
+          <div id="images">
+          <img src="<?php _e(get_stylesheet_directory_uri().'/assets/images/home/image-1.png',"flyhigh") ?>" />  
+          </div>
+          <div id="images">
+          <img src="<?php _e(get_stylesheet_directory_uri().'/assets/images/home/image-1.png',"flyhigh") ?>" />  
+          </div>
+          <div id="images">
+          <img src="<?php _e(get_stylesheet_directory_uri().'/assets/images/home/image-1.png',"flyhigh") ?>" />  
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
 
 <?php
-get_sidebar();
+// get_sidebar();
 get_footer();
