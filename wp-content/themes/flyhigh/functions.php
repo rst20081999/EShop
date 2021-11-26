@@ -189,6 +189,20 @@ function cf_belowslider($wp_customize){
 	custom_setting_control('cf_belowslider_title3','Title 3','cf_belowslider_title3_control','Title 3','cf_belowslider_section',$wp_customize);
 	custom_setting_control('cf_belowslider_desc3','Desc 3','cf_belowslider_desc3_control','Desc 3','cf_belowslider_section',$wp_customize);
 	
+	$wp_customize->add_section('cf_footer',array(
+		'title'=>'Footer',
+	));
+	custom_setting_control('cf_footer_ltitle','Left Title','cf_footer_ltcontrol','Left Title','cf_footer',$wp_customize);
+	custom_setting_control('cf_footer_ldesc','Left Desc','cf_footer_ldcontrol','Left Desc','cf_footer',$wp_customize);
+	custom_setting_control('cf_footer_rtitle','Right Title','cf_footer_rtcontrol','Right Title','cf_footer',$wp_customize);
+	custom_setting_control('cf_footer_rdesc','Right Desc','cf_footer_rdcontrol','Right Desc','cf_footer',$wp_customize);
+	custom_setting_control('cf_footer_email','Email ID','cf_footer_email_control','Email ID','cf_footer',$wp_customize);
+	custom_setting_control('cf_footer_social_fb','#','cf_footer_social_control_fb','Facebook','cf_footer',$wp_customize);
+	custom_setting_control('cf_footer_social_google','#','cf_footer_social_control_google','Google','cf_footer',$wp_customize);
+	custom_setting_control('cf_footer_social_twitter','#','cf_footer_social_control_twitter','Twitter','cf_footer',$wp_customize);
+	custom_setting_control('cf_footer_social_pinterest','#','cf_footer_social_control_pinterest','Pinterest','cf_footer',$wp_customize);
+	custom_setting_control('cf_footer_social_linkedin','#','cf_footer_social_control_linkedin','Linked In','cf_footer',$wp_customize);
+	
 
 }
 function custom_setting_control($setting_id,$default_title,$control_id,$control_label,$section_id,$wp_customize){
