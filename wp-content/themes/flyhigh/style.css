@@ -21,7 +21,6 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 */
-
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
@@ -49,25 +48,381 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	- Alignments
 
 --------------------------------------------------------------*/
-
 /*--------------------------------------------------------------
 # Generic
 --------------------------------------------------------------*/
-
 /* Normalize
 --------------------------------------------- */
-
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
-
 /* Document
 	 ========================================================================== */
-
 /**
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
-html,body{
-margin: 0;
-box-sizing: border-box;
-border: 0;
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&display=swap");
+html,
+body {
+  margin: 0;
+  box-sizing: border-box;
+  border: 0;
 }
+
+header {
+  background-color: #ddd;
+  width: 100%;
+  height: 105px;
+  left: 0;
+  top: 0;
+  position: fixed;
+  z-index: 2;
+}
+
+header #navbar {
+  width: 80%;
+  height: 105px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header #navbar #logo-img {
+  left: 0;
+  display: block;
+  position: relative;
+  margin-right: 20px;
+  width: 200px;
+}
+
+header #navbar #divforsearch {
+  display: flex;
+  flex-direction: row;
+}
+
+header #navbar #searchbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+header #navbar #searchbar input {
+  height: 20px;
+  width: 150px;
+  margin-left: 10px;
+  border-radius: 3px;
+  border: 1px solid #62585f;
+  background-color: #fff;
+}
+
+header #navbar #searchbar span {
+  margin-left: 5px;
+  padding: 1px;
+  border-radius: 10px;
+  background-color: #62585f;
+  color: #fff;
+  width: 20px;
+}
+
+header #navbar .menu-head-menu-container {
+  right: 0;
+}
+
+header #navbar .menu-head-menu-container ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  left: 0;
+}
+
+header #navbar .menu-head-menu-container ul a {
+  font-family: "Open Sans";
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  color: #222;
+  padding: 10px;
+  border-radius: 3px;
+}
+
+header #navbar .menu-head-menu-container ul a:hover {
+  color: #fff;
+  background-color: #ef4634;
+}
+
+.slidercontainer {
+  width: 100%;
+  position: relative;
+  margin: auto;
+  /* Fading animation */
+}
+
+.slidercontainer .showSlide {
+  display: none;
+}
+
+.slidercontainer .showSlide img {
+  width: 100%;
+  height: 504px;
+}
+
+.slidercontainer .left,
+.slidercontainer .right {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+}
+
+.slidercontainer .right {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.slidercontainer .left:hover,
+.slidercontainer .right:hover {
+  background-color: rgba(115, 115, 115, 0.8);
+}
+
+.slidercontainer .content {
+  color: #eff5d4;
+  font-size: 30px;
+  padding: 8px 12px;
+  font-family: "Open Sans";
+  font-weight: 500;
+  font-size: 70px;
+  color: #fff;
+  position: absolute;
+  text-shadow: 2px 2px #950904;
+  bottom: 150px;
+  width: 100%;
+  text-align: center;
+}
+
+.slidercontainer .content2 {
+  color: #eff5d4;
+  font-size: 30px;
+  padding: 8px 12px;
+  font-family: "Open Sans";
+  font-weight: 400;
+  font-size: 16px;
+  color: #fff;
+  position: absolute;
+  text-shadow: 2px 2px #950904;
+  bottom: 110px;
+  width: 100%;
+  line-height: 24px;
+  text-align: center;
+}
+
+.slidercontainer .active {
+  background-color: #717171;
+}
+
+.slidercontainer .fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+#belowslider {
+  width: 100%;
+  height: 101px;
+  position: relative;
+  background-color: #ddd;
+}
+
+#belowslider #content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 80%;
+  height: 100%;
+  margin: 0 auto;
+}
+
+#belowslider #content #data {
+  padding-left: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#belowslider #content #data #data-heading {
+  font-size: 20px;
+  font-family: "Open Sans";
+  color: #ef4634;
+  font-weight: 500;
+  margin: 0;
+}
+
+#belowslider #content #data #para {
+  margin: 0;
+  font-family: "Open Sans";
+  font-weight: 400;
+  font-size: 13px;
+  color: #333;
+}
+
+#belowslider #content #data:last-child {
+  margin-right: 20px;
+}
+
+#belowgallery {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  align-items: center;
+}
+
+#belowgallery #content #title-bar {
+  display: flex;
+  margin-top: 105px;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  border-bottom: 1px solid #68585f;
+  align-items: center;
+}
+
+#belowgallery #content #title-bar p {
+  font-family: "Open Sans";
+  font-weight: 300;
+  font-size: 45px;
+  color: #62585f;
+}
+
+#belowgallery #content #title-bar button {
+  font-family: "Open Sans";
+  font-weight: 400;
+  font-size: 16px;
+  color: #fff;
+  background-color: #222;
+  padding: 10px;
+  border-radius: 3px;
+}
+
+#belowgallery #content #main-gallery {
+  border-bottom: 1px solid #222;
+  width: 100%;
+  align-items: center;
+}
+
+#belowgallery #content #main-gallery #image-box {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+#belowgallery #content #main-gallery #image-box #images {
+  flex: 1 0 33.33%;
+  border-radius: 10px;
+}
+
+#belowgallery #content #main-gallery #image-box #images img {
+  width: 300px;
+  height: 210px;
+  margin: 10px;
+  border-radius: 10px;
+}
+
+footer {
+  width: 80%;
+  margin: 0 auto;
+}
+
+footer #inner {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid #62585f;
+}
+
+footer #inner #head {
+  font-size: 25px;
+  font-family: "Open Sans";
+  font-weight: 400;
+  color: #625854;
+  text-shadow: 2px 2px #fff;
+}
+
+footer #inner #desc {
+  font-family: "Open Sans";
+  font-weight: 400;
+  font-size: 14px;
+  color: #62585f;
+  line-height: 21px;
+}
+
+footer #inner a,
+footer #inner span {
+  text-decoration: none;
+  color: #ef4634;
+  font-family: "Open Sans";
+  font-weight: 400;
+}
+
+footer #inner a:hover,
+footer #inner span:hover {
+  text-decoration: underline;
+}
+
+footer #inner #description {
+  flex: 0 0 50%;
+  margin: 10px;
+}
+
+footer #inner #contactus {
+  flex: 0 0 50%;
+  margin: 10px;
+}
+
+footer #inner #links {
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+footer #copyright {
+  text-align: center;
+  margin: 0 auto;
+  align-items: center;
+  font-family: "Open Sans";
+  font-size: 14px;
+  color: #62585f;
+  padding: 10px;
+}
+
+footer #copyright span {
+  color: #ef4634;
+}
+
+footer #copyright span:hover {
+  text-decoration: underline;
+}
+/*# sourceMappingURL=style.css.map */

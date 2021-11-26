@@ -142,17 +142,9 @@ add_action( 'widgets_init', 'flyhigh_widgets_init' );
  */
 function flyhigh_scripts() {
 	wp_enqueue_style( 'flyhigh-style', get_stylesheet_uri(), array(), _S_VERSION );
-	wp_enqueue_style( 'flyhigh-header-style','./wp-content/themes/flyhigh/assets/css/header.css', array());
-	wp_enqueue_style( 'flyhigh-slider-style','./wp-content/themes/flyhigh/assets/css/main.css', array());
-	wp_enqueue_style( 'flyhigh-footer-style','./wp-content/themes/flyhigh/assets/css/footer.css', array());
 	wp_style_add_data( 'flyhigh-style', 'rtl', 'replace' );
 
-	// wp_enqueue_style( 'flyhigh-slider-style','https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css', array());
-
 	wp_enqueue_script( 'flyhigh-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
-	wp_enqueue_script( 'flyhigh-slider', get_template_directory_uri() . '/js/slide.js', array());
-	// wp_enqueue_script( 'flyhigh-bt-js', 'https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js', array());
-	// wp_enqueue_script( 'flyhigh-bt-js2', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js', array());
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -186,4 +178,28 @@ require get_template_directory() . '/inc/customizer.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
+function cf_belowslider($wp_customize){
+	$wp_customize->add_section('cf_belowslider_section',array(
+		'title'=>'Below Slider',
+	));
+	custom_setting_control('cf_belowslider_title1','Title 1','cf_belowslider_title1_control','Title 1','cf_belowslider_section',$wp_customize);
+	custom_setting_control('cf_belowslider_desc1','Desc 1','cf_belowslider_desc1_control','Desc 1','cf_belowslider_section',$wp_customize);
+	custom_setting_control('cf_belowslider_title2','Title 2','cf_belowslider_title2_control','Title 2','cf_belowslider_section',$wp_customize);
+	custom_setting_control('cf_belowslider_desc2','Desc 2','cf_belowslider_desc2_control','Desc 2','cf_belowslider_section',$wp_customize);
+	custom_setting_control('cf_belowslider_title3','Title 3','cf_belowslider_title3_control','Title 3','cf_belowslider_section',$wp_customize);
+	custom_setting_control('cf_belowslider_desc3','Desc 3','cf_belowslider_desc3_control','Desc 3','cf_belowslider_section',$wp_customize);
+	
 
+}
+function custom_setting_control($setting_id,$default_title,$control_id,$control_label,$section_id,$wp_customize){
+	$wp_customize->add_setting($setting_id,array(
+		'default'=>$default_title
+	));
+	$wp_customize->add_control(new WP_Customize_Control(
+		$wp_customize,$control_id,array(
+		'label'=>$control_label,
+		'section'=>$section_id,
+		'settings'=>$setting_id
+	)));
+}
+add_action('customize_register','cf_belowslider');

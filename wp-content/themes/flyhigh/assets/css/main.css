@@ -10,7 +10,6 @@
 .slidercontainer {
   width: 100%;
   position: relative;
-  top: 105px;
   margin: auto;
 }
 
@@ -92,9 +91,9 @@
 }
 
 #belowslider {
-  margin-top: 105px;
   width: 100%;
   height: 101px;
+  position: relative;
   background-color: #ddd;
 }
 
