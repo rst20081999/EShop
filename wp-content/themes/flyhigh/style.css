@@ -247,7 +247,6 @@ header #navbar .menu-head-menu-container ul a:hover {
 #belowslider {
   width: 100%;
   height: 101px;
-  position: relative;
   background-color: #ddd;
 }
 
@@ -424,5 +423,540 @@ footer #copyright span {
 
 footer #copyright span:hover {
   text-decoration: underline;
+}
+
+#blogpage {
+  width: 80%;
+  margin: 0 auto;
+  height: fit-content;
+  display: flex;
+  flex-direction: row;
+}
+
+#blogpage #blogpost {
+  width: 70%;
+}
+
+#blogpage #blogpost h5 {
+  margin: 15px !important;
+  font-weight: 400;
+  font-family: "Open Sans";
+  font-size: 45px;
+  color: #62585f;
+  text-shadow: 2px 2px #fff;
+  border-bottom: 1px solid #62585f;
+  padding: 10px;
+  width: 100%;
+}
+
+#blogpage #blogpost #thepost {
+  width: 650px;
+}
+
+#blogpage #blogpost #thepost #top {
+  height: fit-content;
+  background-color: #222;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  width: 620px;
+  margin: 8px;
+  border-radius: 3px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#blogpage #blogpost #thepost #top:hover {
+  background-color: #ef4634;
+}
+
+#blogpage #blogpost #thepost #top #date {
+  border-right: 1px solid #fff;
+  font-size: 22px;
+  font-weight: 500;
+  font-family: "Open Sans";
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0px 10px 0px 10px;
+  color: #fff;
+}
+
+#blogpage #blogpost #thepost #top #date span {
+  margin: 0;
+  font-size: 16px;
+}
+
+#blogpage #blogpost #thepost #top h3 {
+  color: #fff;
+  padding: 0px 10px 0px 10px;
+  font-family: "Open Sans";
+  font-weight: 500;
+  font-size: 22px;
+}
+
+#blogpage #blogpost #thepost #bottom {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  margin: 10px 5px 10px 5px;
+}
+
+#blogpage #blogpost #thepost #bottom #image-box img {
+  width: 220px;
+  height: 153px;
+  border-radius: 10px;
+  margin: 5px;
+}
+
+#blogpage #blogpost #thepost #bottom #bottom-right {
+  padding: 0px 10px 0px 0px;
+  margin: 5px;
+}
+
+#blogpage #blogpost #thepost #bottom #bottom-right span {
+  font-family: "Open Sans";
+  font-weight: 400;
+  color: #ef4634;
+}
+
+#blogpage #blogpost #thepost #bottom #bottom-right #author-comment-date {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid #68585f;
+  align-items: center;
+  padding: 5px 10px 0px 5px;
+  justify-content: space-between;
+}
+
+#blogpage #blogpost #thepost #bottom #bottom-right #author-comment-date p {
+  font-size: 13px;
+  font-family: "Open Sans";
+  font-weight: 400;
+  color: #68585f;
+}
+
+#blogpage #blogpost #thepost #bottom #bottom-right #excerpt {
+  font-family: "Open Sans";
+  font-weight: 400;
+}
+
+#blogpage #blogpost #thepost #bottom #bottom-right #excerpt p {
+  font-size: 14px;
+}
+
+#blogpage #psidebar {
+  width: 30%;
+  padding: 0;
+}
+
+#sidebar {
+  width: 100%;
+  padding: 20px;
+}
+
+#sidebar h3 {
+  font-size: 25px;
+  color: #62585f;
+  text-shadow: 2px 2px #fff;
+  font-family: "Open Sans";
+  font-weight: 500;
+  border-bottom: 1px solid #62585f;
+  padding: 5px;
+}
+
+#sidebar #psidebar {
+  height: fit-content;
+  width: 100%;
+}
+
+#sidebar #psidebar #pgallery {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+#sidebar #psidebar #pgallery #pimage {
+  flex: 0 0 25%;
+  border-radius: 5px;
+  width: 100%;
+}
+
+#sidebar #psidebar #pgallery #pimage img {
+  height: 60px;
+  width: 60px;
+  margin: 5px;
+  border-radius: 5px;
+}
+
+#sidebar #recent-posts {
+  width: 100%;
+  padding: 5px;
+}
+
+#sidebar #recent-posts #posts1 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 5px;
+}
+
+#sidebar #recent-posts #posts1 p {
+  font-family: 'Open Sans';
+  font-weight: 500;
+  font-size: 14px;
+  color: #62585f;
+  margin: 2px;
+}
+
+#sidebar #recent-posts #posts1 #pimage img {
+  width: 45px;
+  height: 45px;
+  border-radius: 5px;
+  margin: 5px;
+}
+
+#sidebar #recent-posts #posts1 #data #admin {
+  font-size: 12px;
+}
+
+#sidebar #recent-posts #posts1 #data #admin span {
+  color: #ef4634;
+}
+
+#sidebar #archives {
+  width: 100%;
+  padding: 15px;
+}
+
+#sidebar #archives option {
+  font-family: 'Open Sans';
+  font-weight: '400';
+  font-size: 15px;
+}
+
+#sidebar #archives option:before {
+  content: "\f522";
+}
+
+#portfolio {
+  width: 80%;
+  margin: 0 auto;
+}
+
+#portfolio #top {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  border-bottom: 2px solid #68585f;
+  margin: 0;
+}
+
+#portfolio #top h3 {
+  font-family: "Open Sans";
+  color: #68585f;
+  font-size: 40px;
+  font-weight: 300;
+}
+
+#portfolio #top #buttonlist {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  width: 40%;
+}
+
+#portfolio #top #buttonlist a {
+  font-family: "Open Sans";
+  font-weight: 500;
+  font-size: 16px;
+  color: #fff;
+  padding: 10px;
+  background-color: #222;
+  border-radius: 5px;
+}
+
+#portfolio #top #buttonlist a:hover {
+  background-color: #ef4634;
+}
+
+#portfolio #gallery {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  border-bottom: 2px solid #62585f;
+  padding-bottom: 10px;
+}
+
+#portfolio #gallery #image {
+  flex: 0 0 33%;
+}
+
+#portfolio #gallery #image img {
+  width: 300px;
+  height: 210px;
+  border-radius: 10px;
+  margin: 10px;
+}
+
+#TB_ajaxContent {
+  padding: 20px 20px 60px 20px;
+}
+
+#TB_ajaxContent img {
+  width: 100%;
+  height: 90%;
+  object-fit: 100% 100%;
+}
+
+#pagination {
+  width: fit-content;
+  align-items: center;
+  padding: 20px;
+}
+
+#pagination .page-numbers {
+  font-size: 16px;
+  margin: 0 auto;
+  font-family: "Open Sans";
+  font-weight: 500;
+  color: #222;
+  padding: 10px 13px 10px 13px;
+  border-radius: 3px;
+  text-decoration: none;
+}
+
+#pagination .page-numbers:hover {
+  color: #fff;
+  background-color: #ef4634;
+}
+
+#pagination .current {
+  color: #fff;
+  background-color: #ef4634;
+}
+
+#single-post {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+}
+
+#single-post #thepost {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+}
+
+#single-post #thepost h3 {
+  font-family: "Open Sans";
+  font-weight: 500;
+  font-size: 35px;
+  color: #62585f;
+  text-shadow: 2px 2px #fff;
+  margin: 50px 10px 10px 10px;
+}
+
+#single-post #thepost #author-comment-date {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid #68585f;
+  align-items: center;
+  padding: 5px 10px 0px 5px;
+  justify-content: space-between;
+}
+
+#single-post #thepost #author-comment-date p {
+  font-size: 13px;
+  font-family: "Open Sans";
+  font-weight: 400;
+  color: #68585f;
+}
+
+#single-post #thepost #author-comment-date span {
+  font-family: "Open Sans";
+  font-weight: 400;
+  color: #ef4634;
+}
+
+#single-post #thepost #content {
+  font-family: "Open Sans";
+  font-size: 14px;
+  color: #62685f;
+  line-height: 21px;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+#single-post #thepost img {
+  width: 620px !important;
+  max-width: 100%;
+  height: 300px;
+}
+
+#single-post #thepost #tags {
+  text-transform: uppercase;
+}
+
+#single-post #thepost #tags a {
+  color: #ef4634;
+  text-decoration: none;
+}
+
+#single-post #thepost #comments {
+  width: 100%;
+}
+
+#single-post #thepost #comments h5 {
+  font-family: "Open Sans";
+  font-weight: 500;
+  color: #62685f;
+  font-size: 18px;
+  border-bottom: 2px solid #62685f;
+  border-top: 2px solid #62685f;
+  padding: 5px;
+}
+
+#single-post #thepost #comments ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#single-post #thepost #comments ol footer {
+  margin: 0;
+}
+
+#single-post #thepost #comments ol li {
+  padding: 0;
+}
+
+#single-post #thesidebar {
+  width: 30%;
+}
+
+#single-post .comment-by {
+  font-family: "Open Sans";
+  font-weight: 400;
+  font-size: 13px;
+  color: #62585f;
+}
+
+#single-post .comment-by #author {
+  color: #ef4634;
+}
+
+#single-post .comment-block {
+  padding-left: 15px;
+}
+
+#single-post .comment-block p {
+  font-family: "Open Sans";
+  font-weight: 400;
+  font-size: 14px;
+  color: #62585f;
+}
+
+#single-post .float-right {
+  width: 100%;
+  right: 0;
+  bottom: 0;
+  position: relative;
+  font-family: "Open Sans";
+  font-weight: 400;
+  font-size: 14px;
+  text-align: right;
+}
+
+#single-post .float-right a {
+  text-decoration: none;
+  color: #62585f;
+}
+
+#single-post .comment {
+  margin: 10px;
+  padding: 10px;
+}
+
+#single-post .comment-list {
+  border-bottom: 2px solid #62585f;
+}
+
+#single-post #formforcomment {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+#single-post form {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+#single-post #respond {
+  flex: 0 0 100%;
+}
+
+#single-post #comment-label {
+  font-family: "Open Sans";
+  font-weight: 400;
+  font-size: 18px;
+  color: #62585f;
+}
+
+#single-post #comment-textarea {
+  width: 100%;
+}
+
+#single-post .comment-form-author,
+#single-post .comment-form-email,
+#single-post .comment-form-url {
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 30%;
+  padding: 5px;
+}
+
+#single-post .comment-form-author label,
+#single-post .comment-form-email label,
+#single-post .comment-form-url label {
+  font-family: "Open Sans";
+  font-weight: 400;
+  font-size: 14px;
+  color: #68585f;
+}
+
+#single-post .comment-form-author input,
+#single-post .comment-form-email input,
+#single-post .comment-form-url input {
+  width: 195px;
+  height: 30px;
+  color: #fff;
+  border: 1px solid #62585f;
+}
+
+#single-post .form-submit {
+  flex: 0 0 100%;
+  text-align: right;
+}
+
+#single-post .form-submit #submit {
+  font-size: 14px;
+  background-color: #222;
+  color: #fff;
+  font-family: "Open Sans";
+  font-weight: 500;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+#single-post .comment-form-cookies-consent {
+  display: none;
 }
 /*# sourceMappingURL=style.css.map */

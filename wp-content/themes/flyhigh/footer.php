@@ -14,13 +14,13 @@
 	<footer>
 		<div id="inner">
 		<div id="description">
-			<p id="head">Welcome to D'SIGNfly</p>
-			<p id="desc">Loren sum ipsum Loren sum ipsum Loren sum ipsum Loren sum ipsum Loren sum ipsum Loren sum ipsum Loren sum ipsum Loren sum ipsum Loren sum ipsum Loren sum ipsum</p>
+			<p id="head"><?php echo get_theme_mod('cf_footer_ltitle'); ?></p>
+			<p id="desc"><?php echo get_theme_mod('cf_footer_ldesc'); ?></p>
 			<a href="#">Read More</p></a>
 		</div>
 		<div id="contactus">
-			<p id="head">Contact Us</p>
-			<p id="desc">Street something some thiongs dfji sfid  fjdk fdif <br/> Email: <span>conatc@gmail.com</span></p>
+			<p id="head"><?php echo get_theme_mod('cf_footer_rtitle'); ?></p>
+			<p id="desc"><?php echo get_theme_mod('cf_footer_rdesc'); ?><br/> Email: <span><?php echo get_theme_mod('cf_footer_email'); ?></span></p>
 		<div id="links">
 			<a href="<?php echo get_theme_mod('cf_footer_social_fb') ?>"><img class="fb" src="<?php _e(get_stylesheet_directory_uri().'/assets/images/home/fb.png',"flyhigh") ?>" /></a>
 			<a href="<?php echo get_theme_mod('cf_footer_social_google') ?>"><img class="google" src="<?php _e(get_stylesheet_directory_uri().'/assets/images/home/google.png',"flyhigh") ?>" /></a>

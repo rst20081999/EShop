@@ -69,8 +69,12 @@ $logo=get_header_image();?>
         <a class="left" onclick="nextSlide(-1)"><span class="dashicons dashicons-arrow-left-alt"></span></a>  
         <a class="right" onclick="nextSlide(1)"><span class="dashicons dashicons-arrow-right-alt"></span></a>  
     </div>
-	<?php endif; ?>
     <div id="belowslider">
+	<?php else: ?>
+    <div id="belowslider" style="margin-top:105px;">
+
+  <?php endif; ?>
+    
       <div id="content">
         <div id="data">
         <img src="<?php _e(get_stylesheet_directory_uri().'/assets/images/home/leaf.png',"flyhigh") ?>"/>

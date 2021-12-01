@@ -24,36 +24,23 @@ if ( post_password_required() ) {
 
 	<?php
 	// You can start editing here -- including this comment!
+	// $comments = get_comments( array( 'post_id' => $post->ID ) );
+	// print_r($comments);
 	if ( have_comments() ) :
+
 		?>
-		<h2 class="comments-title">
-			<?php
-			$flyhigh_comment_count = get_comments_number();
-			if ( '1' === $flyhigh_comment_count ) {
-				printf(
-					/* translators: 1: title. */
-					esc_html__( 'One thought on &ldquo;%1$s&rdquo;', 'flyhigh' ),
-					'<span>' . wp_kses_post( get_the_title() ) . '</span>'
-				);
-			} else {
-				printf( 
-					/* translators: 1: comment count number, 2: title. */
-					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $flyhigh_comment_count, 'comments title', 'flyhigh' ) ),
-					number_format_i18n( $flyhigh_comment_count ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-					'<span>' . wp_kses_post( get_the_title() ) . '</span>'
-				);
-			}
-			?>
-		</h2><!-- .comments-title -->
+		<!-- .comments-title -->
 
 		<?php the_comments_navigation(); ?>
 
 		<ol class="comment-list">
+
 			<?php
 			wp_list_comments(
 				array(
 					'style'      => 'ol',
 					'short_ping' => true,
+					'callback'=>'better_comments'
 				)
 			);
 			?>
@@ -69,9 +56,20 @@ if ( post_password_required() ) {
 			<?php
 		endif;
 
-	endif; // Check for have_comments().
-
-	comment_form();
+	endif;
+	 // Check for have_comments().
+	 ?>
+		 <?php
+	 $args=array(
+		'title_reply_to'=>' ',
+		'cancel_reply_link'=>" ",
+		'comment_notes_before'=>" ",
+		'logged_in_as'=>' ',
+		'comment_form_comment'=> ' ',
+		'class_container'=>'df',
+		'comment_author_email'=>" ",
+		'comment_field'=>'<label id="comment-label" for="comment">' . _x( 'Post your Comment', 'noun' ).'</label><textarea id="comment-textarea" name="comment" placeholder="comment here" cols="45" rows="5" aria-required="true"></textarea>',
+	);
+	comment_form($args);
 	?>
-
 </div><!-- #comments -->

@@ -39,6 +39,7 @@ if ( ! function_exists( 'flyhigh_setup' ) ) :
 		 * provide it for us.
 		 */
 		add_theme_support( 'title-tag' );
+		add_theme_support('post-thumbnails');
 
 		/*
 		 * Enable support for Post Thumbnails on posts and pages.
@@ -197,7 +198,7 @@ function cf_belowslider($wp_customize){
 	custom_setting_control('cf_footer_rtitle','Right Title','cf_footer_rtcontrol','Right Title','cf_footer',$wp_customize);
 	custom_setting_control('cf_footer_rdesc','Right Desc','cf_footer_rdcontrol','Right Desc','cf_footer',$wp_customize);
 	custom_setting_control('cf_footer_email','Email ID','cf_footer_email_control','Email ID','cf_footer',$wp_customize);
-	custom_setting_control('cf_footer_social_fb','#','cf_footer_social_control_fb','Facebook','cf_footer',$wp_customize);
+	custom_setting_control('cf_footer_social_fb','#','cf_footer_social_control_fb','FacePortfolio','cf_footer',$wp_customize);
 	custom_setting_control('cf_footer_social_google','#','cf_footer_social_control_google','Google','cf_footer',$wp_customize);
 	custom_setting_control('cf_footer_social_twitter','#','cf_footer_social_control_twitter','Twitter','cf_footer',$wp_customize);
 	custom_setting_control('cf_footer_social_pinterest','#','cf_footer_social_control_pinterest','Pinterest','cf_footer',$wp_customize);
@@ -217,3 +218,107 @@ function custom_setting_control($setting_id,$default_title,$control_id,$control_
 	)));
 }
 add_action('customize_register','cf_belowslider');
+
+function customPostPortfolio()
+{
+	// Set UI labels for Custom Post Type
+	$labels = [
+		'name' => _x('Portfolio', 'Post Type General Name', 'portfoliodomain'),
+		'singular_name' => _x('Portfolios', 'Post Type Singular Name', 'portfoliodomain'),
+		'menu_name' => __('Portfolio', 'portfoliodomain'),
+		'parent_item_colon' => __('Parent Portfolio', 'portfoliodomain'),
+		'all_items' => __('All Portfolios', 'portfoliodomain'),
+		'view_item' => __('View Portfolio', 'portfoliodomain'),
+		'add_new_item' => __('Add New Portfolio', 'portfoliodomain'),
+		'add_new' => __('Add New', 'portfoliodomain'),
+		'edit_item' => __('Edit Portfolio', 'portfoliodomain'),
+		'update_item' => __('Update Portfolio', 'portfoliodomain'),
+		'search_items' => __('Search Portfolio', 'portfoliodomain'),
+		'not_found' => __('Not Found', 'portfoliodomain'),
+		'not_found_in_trash' => __('Not found in Trash', 'portfoliodomain'),
+	];
+
+	// Set other options for Custom Post Type
+
+	$args = [
+		'label' => __('Portfolios', 'portfoliodomain'),
+		'description' => __('Portfolio news and reviews', 'portfoliodomain'),
+		'labels' => $labels,
+		// Features this CPT supports in Post Editor
+		// You can associate this CPT with a taxonomy or custom taxonomy.
+		'taxonomies' => ['genres'],
+		/* A hierarchical CPT is like Pages and can have
+		* Parent and child items. A non-hierarchical CPT
+		* is like Posts.
+		*/
+		'hierarchical' => false,
+		'public' => true,
+		'show_ui' => true,
+		'show_in_menu' => true,
+		'show_in_nav_menus' => true,
+		'show_in_admin_bar' => true,
+		'menu_position' => 5,
+		'can_export' => true,
+		'has_archive' => true,
+		'exclude_from_search' => false,
+		'publicly_queryable' => true,
+		'capability_type' => 'post',
+		'show_in_rest' => true,
+		'supports' => array('title', 'editor', 'thumbnail'),
+	];
+
+	// Registering your Custom Post Type
+	register_post_type('Portfolios', $args);
+}
+add_action('init','customPostPortfolio');
+add_action('init', 'init_theme_method');
+ 
+function init_theme_method() {
+   add_thickbox();
+}
+function better_comments($comment, $args, $depth){
+	?>
+	<li <?php comment_class(); ?> id="li-comment-<?php comment_ID() ?>">
+	 <div class="comment">
+		 <div class="icon-thumbnail">
+		 <span class="dashicons dashicons-admin-comments"></span>
+		 <span class="comment-by">
+					 <span id="author"><?php echo get_comment_author() ?></span>
+					 
+			 <span class="date float-right">said on <?php printf(/* translators: 1: date and time(s). */ esc_html__('%1$s at %2$s' , '5balloons_theme'), get_comment_date(),  get_comment_time()) ?></span>
+
+				 </span>
+				 
+		 </div>
+		 <div class="comment-block">
+			 <div class="comment-arrow"></div>
+				 <?php if ($comment->comment_approved == '0') : ?>
+					 <em><?php esc_html_e('Your comment is awaiting moderation.','5balloons_theme') ?></em>
+					 <br />
+				 <?php endif; ?>
+			 <p> <?php comment_text() ?></p>
+		 </div>
+		 <div class="float-right">
+						 <span> <a href="#"><i class="fa fa-reply"></i> <?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?></a></span>
+					 </div>
+		 </div>
+ 
+ <?php
+		 }
+
+		//  function wpsites_customize_comment_form_text_area($arg) {
+		// 	$arg['comment_field'] = '<label for="comment">' . _x( 'Your Feedback Is Appreciated', 'noun' ) . '</label><textarea id="comment" name="comment" placeholder="Please Use Pastebin or Github Gists If You Want To Leave PHP Code In Your Comment. Thanks!"cols="45" rows="1" aria-required="true"></textarea></p></div>';
+		// 	return $arg;
+		// }
+		
+		// add_filter('comment_form_defaults', 'wpsites_customize_comment_form_text_area');
+		add_filter( 'comment_form_default_fields', 'wc_comment_form_change_cookies' );
+function wc_comment_form_change_cookies( $fields ) {
+	$commenter = wp_get_current_commenter();
+
+	$consent   = empty( $commenter['comment_author_email'] ) ? '' : ' checked="checked"';
+
+	$fields['cookies'] = '<p class="comment-form-cookies-consent"><input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes"' . $consent . ' />' .
+					 '<label for="wp-comment-cookies-consent">'.__('Remember Me!', 'textdomain').'</label></p>';
+	return $fields;
+}

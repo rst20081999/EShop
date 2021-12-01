@@ -4,49 +4,19 @@
 *
 */
 get_header();
-if(is_category()):
-	$title=single_cat_title();
-	$feild="category_name";
-	$value=single_cat_title();
-elseif(is_tag()):
-	$title=single_tag_title();
-	$feild="tag";
-	$value=single_tag_title();
-elseif(is_author()):
-	the_post();
-	$title=get_the_author();
-	$feild="author";
-	$value=get_the_author();
-elseif(is_day()):
-	$title=get_the_date();
-	$feild="day";
-	$value=get_the_date('j');
-elseif(is_month()):
-	$feild="monthnum";
-	$title=get_the_date('F Y');
-	$value=get_the_date('m');
-elseif(is_year()):
-	$feild="year";
-	$title='Year: '.get_the_date('Y');	
-	$value=get_the_date('Y');
-else:
-	$title='Archives';
-endif;
 ?>
 <div id="blogpage">
 <div id=blogpost>
-<h5><?php echo esc_html($title,'flyhigh'); ?></h5>
+<h5>LET'S BLOG</h5>
 <?php
 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 
 $args = array(
     'post_type' => 'post',
-    'paged'=>$paged,
-	$feild=>$value,
+    'posts_per_page'=>2,
+    'paged'=>$paged
 );
-// print_r($args);
 $obituary_query = new WP_Query($args);
-// print_r($obituary_query);
 while ($obituary_query->have_posts()) : $obituary_query->the_post();
 ?>
 <div id="thepost">

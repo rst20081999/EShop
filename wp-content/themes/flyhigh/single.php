@@ -9,32 +9,36 @@
 
 get_header();
 ?>
-
-	<main id="primary" class="site-main">
-
-		<?php
-		while ( have_posts() ) :
-			the_post();
-
-			get_template_part( 'template-parts/content', get_post_type() );
-
-			the_post_navigation(
-				array(
-					'prev_text' => '<span class="nav-subtitle">' . esc_html__( 'Previous:', 'flyhigh' ) . '</span> <span class="nav-title">%title</span>',
-					'next_text' => '<span class="nav-subtitle">' . esc_html__( 'Next:', 'flyhigh' ) . '</span> <span class="nav-title">%title</span>',
-				)
-			);
-
-			// If comments are open or we have at least one comment, load up the comment template.
+<?php the_post(); ?>
+<div id="single-post">
+	<div id="thepost">
+		<h3><?php the_title();?></h3>
+		<div id="author-comment-date">
+            <p>by <span><?php echo get_the_author()?></span> on <?php echo get_the_date('j M Y')?></p>
+            <span><?php echo get_comments_number();?> comments</span>
+        </div>
+		<div id="content">
+		<?php if (has_post_thumbnail( $post->ID ) ):
+		$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID )); ?>
+    	<img  src="<?php _e($image[0],'flyhigh') ?>"/>
+	<?php 
+	endif;?>
+			<?php the_content(); ?>
+			<p id="tags"><?php the_tags() ?></p>
+		</div>
+		<div id="comments">
+			<h5>Comments</h5>
+			<?php
 			if ( comments_open() || get_comments_number() ) :
 				comments_template();
 			endif;
-
-		endwhile; // End of the loop.
 		?>
-
-	</main><!-- #main -->
-
+		</div>
+	</div>
+	<div id="thesidebar">
+		<?php get_sidebar();?>
+	</div>
+</div>
 <?php
 get_sidebar();
 get_footer();
